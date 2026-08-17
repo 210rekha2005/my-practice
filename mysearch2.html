@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Mini Search App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: #f5f7fa; }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 20px; text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header h1 { font-size: 28px; font-weight: 600; }
+        
+        .container { display: flex; max-width: 1200px; margin: 30px auto; gap: 30px; padding: 0 20px; }
+        
+        .sidebar { flex: 0 0 250px; display: flex; flex-direction: column; gap: 15px; }
+        
+        /* Style links to look like buttons */
+        .btn {
+            background: white; color: #667eea; border: 2px solid #667eea;
+            padding: 15px 20px; border-radius: 10px; font-size: 16px;
+            font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+            text-decoration: none; text-align: center; display: block;
+        }
+        .btn:hover {
+            background: #667eea; color: white; transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .content {
+            flex: 1; background: white; padding: 30px; border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08); min-height: 400px;
+        }
+        
+               .content-section {
+            display: none;
+        }
+        
+               .content-section:target {
+            display: block;
+        }
+        
+        /* SHOW WELCOME BY DEFAULT if no hash in URL */
+        .content #welcome {
+            display: block;
+        }
+        .content #welcome:target ~ #welcome {
+            display: block;
+        }
+        /* Hide welcome when any other section is targeted */
+        .content-section:target ~ #welcome {
+            display: none;
+        }
+        
+        .content h2 { color: #667eea; margin-bottom: 15px; font-size: 24px; }
+        .content p { color: #666; line-height: 1.6; margin-bottom: 10px; }
+        .content ul { margin-left: 20px; color: #666; }
+        .content hr { margin: 20px 0; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>My Mini Search App</h1>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            
+            <a href="#home.html" class="btn">Home</a>
+            <a href="#google" class="btn">My Google Notes</a>
+            <a href="#youtube" class="btn">My YouTube Links</a>
+            <a href="#gmail" class="btn">My Gmail Drafts</a>
+        </div>
+        
+        <div class="content">
+            
+                        <div id="google" class="content-section">
+                <h2>My Google Notes</h2>
+                <p><b>Important topics to search:</b></p>
+                <ul>
+                    <li><b>DSA:</b> Practice linked lists, trees, graphs</li>
+                    <li><b>Web Dev:</b> Learn React, Node.js</li>
+                    <li><b>College:</b> BCA 1st year syllabus PDF</li>
+                </ul>
+                <p><b>Useful Links:</b></p>
+                <p>GeeksforGeeks: <a href="https://geeksforgeeks.org" target="_blank">geeksforgeeks.org</a></p>
+                <p>W3Schools: <a href="https://w3schools.com" target="_blank">w3schools.com</a></p>
+            </div>
+            
+            <!-- SECTION 2: YOUTUBE - ADD YOUR CONTENT HERE -->
+            <div id="youtube" class="content-section">
+                <h2>My YouTube Playlist</h2>
+                <p><b>Saved videos for study:</b></p>
+                <ul>
+                    <li>Data Structures Full Course - CodeWithHarry</li>
+                    <li>HTML CSS Crash Course - Apna College</li>
+                    <li>Java Tutorial for Beginners-@telusko</li>
+                    <li>Data Structure concepts-GATE Smasher</li></ul>
+                <p><b>Direct Links:</b></p>
+                <p><a href="https://youtube.com" target="_blank">Open YouTube</a></p>
+            </div>
+               <div id="gmail" class="content-section">
+                <h2>My Gmail Drafts</h2>
+                <p><b>Draft 1: To Professor</b></p>
+                <p>Subject: Assignment Submission<br>
+                Sir, I have attached my BCA practical file. Please review.</p>
+                <hr>
+                <p><b>Draft 2: To Friend</b></p>
+                <p>Subject: Notes<br>
+                Hey, sending you DSA notes. Check attachment.</p>
+            </div><div id="welcome" class="content-section" align="center">
+                <h2>Welcome </h2><p>This is your personal dashboard..</p>
+                 <p>Your data safety is our first motive please choose the app you want work with.</p><img src="https://static.vecteezy.com/system/resources/previews/032/193/953/non_2x/pointing-hand-left-icon-emoji-vector.jpg" width="100" lenght="100" >
+             </div></div>   </div></body></html>
